@@ -11,7 +11,8 @@ class TasksTableSchema extends Schema {
       table.string('title')
       table.date('due_date')
       table.boolean('done')
-      table.integer('list_id')
+      table.integer('todo_list_id')
+      table.foreign('todo_list_id').references('todo_lists.id')
     })
   }
 
