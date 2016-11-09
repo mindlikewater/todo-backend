@@ -69,7 +69,7 @@ module.exports = {
   | a serious security risk. Below options will manage this for you.
   |
   */
-  noopen: false,
+  noopen: true,
 
   /*
   |--------------------------------------------------------------------------
@@ -81,7 +81,7 @@ module.exports = {
   |
   */
   csrf: {
-    enable: true,
+    enable: false,
     methods: ['POST', 'PUT', 'DELETE'],
     filterUris: [],
     compareHostAndOrigin: true
