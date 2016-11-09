@@ -69,7 +69,7 @@ module.exports = {
   | a serious security risk. Below options will manage this for you.
   |
   */
-  noopen: true,
+  noopen: false,
 
   /*
   |--------------------------------------------------------------------------
