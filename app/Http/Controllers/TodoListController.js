@@ -21,6 +21,14 @@ class TodoListController {
 
     response.json(lists)
   }
+
+  * delete (request, response) {
+    let userId = request.param('id')
+    const affectedRows = yield Database
+    .table('todo_lists')
+    .where('userId', 'lists')
+    .del()
+  }
 }
 
 module.exports = TodoListController
