@@ -10,13 +10,13 @@ class TodoListsTableSchema extends Schema {
       table.timestamps()
       table.string('name')
       table.integer('user_id')
+      table.foreign('user_id').references('users.id')
     })
   }
 
   down () {
     this.drop('todo_lists')
   }
-
 }
 
 module.exports = TodoListsTableSchema
