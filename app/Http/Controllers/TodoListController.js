@@ -1,5 +1,7 @@
 'use strict'
 
+const TodoList = use("App/Model/TodoList")
+
 class TodoListController {
 
   * example (request, response) {
@@ -24,10 +26,10 @@ class TodoListController {
 
   * delete (request, response) {
     let userId = request.param('id')
-    const affectedRows = yield Database
-    .table('todo_lists')
-    .where('userId', 'lists')
-    .del()
+    let lists = yield TodoList.query().where('user_id', userId)
+    let eraseList = yield TodoList.query().where(userId, 'lists').del()
+
+    response.json(eraseList)
   }
 }
 
