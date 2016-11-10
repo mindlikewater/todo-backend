@@ -23,6 +23,11 @@ class UserController {
     }
   }
 
+  * delete (request, response) {
+    let userId = request.param('id')
+    let deleteUser = yield User.query().where('id', userId).del()
+  }
+
 }
 
 module.exports = UserController
