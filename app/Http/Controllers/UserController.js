@@ -26,8 +26,9 @@ class UserController {
   * delete (request, response) {
     let userId = request.param('id')
     let deleteUser = yield User.query().where('id', userId).del()
-  }
 
+    response.status(201).json({ success: "User successfully deleted" })
+  }
 }
 
 module.exports = UserController
